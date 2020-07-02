@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+endpoints:
+  info:
+    id: information
+    sensitive: false
+    enabled: true
+information:
+  app:
+    name: AlbumsApplication
+    description: Album Microservice
+    version: 1.0.0
+managment:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  application:
+    name: album-microservice
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+#  instance:
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
